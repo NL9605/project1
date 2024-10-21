@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+/* Styles chung cho toàn trang */
+html, body {
+    max-width: 100vw; /* Không cho phép nội dung vượt quá kích thước khung nhìn */
+    overflow-x: hidden; /* Ẩn thanh cuộn ngang */
+}
+
+* {
+    box-sizing: border-box; /* Đảm bảo padding và border không làm tăng kích thước phần tử */
+    margin: 0;
+    padding: 0;
+}
+
+.slide-show {
+    margin-top: 70px; /* Adjust this value based on your header's height */
+    position: relative;
+    width: 100%; /* Đặt chiều rộng cho slideshow */
+    height: 500px; /* Đặt chiều cao cho slideshow */
+    overflow: hidden; /* Ẩn các phần tử tràn */
+}
+
+.list-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.list-image .slide {
+    position: absolute; /* Đặt các slide chồng lên nhau */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Đảm bảo slide chiếm toàn bộ chiều cao */
+    opacity: 0; /* Ẩn các slide */
+    transition: opacity 1s ease-in-out; /* Thêm hiệu ứng chuyển đổi opacity */
+}
+
+.list-image .slide.active {
+    opacity: 1; /* Hiển thị slide hiện tại */
+}
+
+/* Đặt lớp text-overlay ở chính giữa */
+.text-overlay {
+    position: absolute;
+    top: 50%; /* Đặt ở giữa chiều cao */
+    left: 50%; /* Đặt ở giữa chiều rộng */
+    transform: translate(-50%, -50%); /* Di chuyển về chính giữa */
+    color: white;
+    text-align: center; /* Căn giữa văn bản */
+    z-index: 2; /* Đảm bảo văn bản hiển thị trên hình ảnh */
+}
+
+.learn-more-btn {
+    margin-top: 50px;
+    padding: 15px 30px; /* Thêm padding cho nút */
+    color: white; /* Màu chữ cho nút */
+    border: 2px solid white;
+    cursor: pointer; /* Hiển thị con trỏ khi di chuột qua */
+    text-decoration: none;
+    font-size: 18px;
+}
+
+body, p, h1, h2, a, button, .learn-more-btn {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.btn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 24px;
+    z-index: 10; /* Đảm bảo nút hiển thị trên các slide */
+}
+
+.btns-left {
+    left: 10px;
+}
+
+.btns-right {
+    right: 10px;
+}
+
+.index-image {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.index-item {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: gray;
+    opacity: 0.5; /* Đặt độ mờ cho chỉ báo */
+}
+
+.index-item.active {
+    opacity: 1; /* Độ mờ cho chỉ báo hiện tại */
+}
+
+.text-overlay h1 {
+    font-size: 20px; /* Giảm cỡ chữ của h1 */
+    font-weight: normal; /* Giữ định dạng chữ đậm */
+    margin: 20px 0 60px 0;
+}
+
+.text-overlay h3 {
+    font-size: 90px; /* Tăng cỡ chữ của h3 */
+    font-weight: bold; /* Bạn có thể thay đổi kiểu chữ nếu muốn */
+    margin: 5px 0; /* Khoảng cách giữa các phần tử */
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 4px;
+}
+
+
+/* Phần wrap image và danh sách hình ảnh */
+.wrap-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.introduction p {
+    font-size: 18px; /* Điều chỉnh kích thước chữ nếu cần */
+    line-height: 1.5; /* Tăng khoảng cách giữa các dòng */
+    margin: 60px 0 60px; /* Thêm khoảng cách trên và dưới cho đoạn văn */
+    text-align: center; /* Căn giữa văn bản nếu cần */
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row-1, .row-2 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.row-1 > div, .row-2 > div {
+    flex: 1;
+    margin: 0 5px;
+    position: relative;
+}
+
+.img-container {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    margin: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.img-container:hover {
+    transform: scale(1.05); /* Khi hover, hình ảnh sẽ phóng to nhẹ */
+}
+
+
+.img-container a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+}
+
+.wrap-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: linear-gradient(160deg, #ffffff 0%, #cabaad 100%);
+    padding: 5px;
+}
+
+.img-container p {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    margin: 0;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.img-container:hover p {
+    opacity: 1; /* Hiển thị nút khi hover */
+}
+
+.row-2 {
+    margin-top: 10px;
+}
+.row-2 > div {
+    margin: 0 2px;
+}
+
+/* Phần why */
+.aboutus {
+    position: relative; /* Để sử dụng absolute cho h2 */
+    text-align: center; /* Căn giữa văn bản */
+    margin-top: 20px; /* Thêm khoảng cách trên cho phần why */
+}
+
+.aboutus img {
+    width: 100vw; /* Đặt chiều rộng của ảnh bằng 100% */
+    height: auto; /* Đảm bảo chiều cao tự động theo tỷ lệ của ảnh */
+    max-width: 100%; /* Giới hạn chiều rộng tối đa bằng với container */
+    overflow: hidden;
+}
+
+.aboutus .text {
+    position: absolute;
+    top: 50%;
+    left: 10%; /* Dịch text sang phải một chút bằng cách tăng giá trị của left */
+    transform: translateY(-50%); /* Căn giữa theo trục dọc */
+    background-color: rgba(11, 9, 17, 0.7); /* Màu nền đen với độ mờ 70% */
+    color: white; /* Màu chữ trắng */
+    padding: 50px; /* Tăng thêm padding để tạo thêm không gian cho văn bản */
+    max-width: 70%;
+}
+
+.aboutus .text h2, .aboutus .text h1, .aboutus .text p {
+    margin: 0 0 10px 0; /* Đặt khoảng cách dưới giữa các phần tử */
+}
+
+.aboutus .text h2 {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.aboutus .text h1 {
+    font-size: 36px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.aboutus .text p {
+    font-size: 18px;
+    line-height: 1.6; /* Đặt khoảng cách giữa các dòng cho dễ đọc */
+    text-align: left;
+}
+

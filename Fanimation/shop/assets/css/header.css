@@ -1,0 +1,257 @@
+/* To keep the existing styles */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+nav {
+    position: fixed; /* Keeps the header fixed */
+    top: 0; /* Positions it at the top */
+    z-index: 99; /* Ensures it stays above other content */
+    width: 100%; /* Full width of the viewport */
+    background: #354B59; /* Background color */
+}
+
+.main-content {
+    margin-top: 70px; /* Same height as the header */
+    padding: 20px; /* Optional padding */
+}
+
+nav .wrapper {
+    position: relative;
+    max-width: 1300px;
+    padding: 0px 30px;
+    height: 70px;
+    line-height: 70px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20%;
+}
+
+.wrapper .logo {
+    margin-top: 20px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrapper .nav-links {
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    position: relative; /* Add relative positioning */
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 9px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-links li a::after {
+    content: ""; /* Create a pseudo-element */
+    position: absolute;
+    left: 50%;
+    bottom: 0; /* Position at the bottom */
+    width: 0; /* Start with a width of 0 */
+    height: 2px; /* Set the height of the underline */
+    background: #f2f2f2; /* Set the color of the underline */
+    transition: width 0.3s ease, left 0.3s ease; /* Add transition effects */
+}
+
+.nav-links li a:hover::after {
+    width: 100%; /* Full width on hover */
+    left: 0; /* Center the underline */
+}
+
+/* Active link */
+.nav-links li a.active::after {
+    width: 100%; /* Keep the underline visible for the active link */
+    left: 0; /* Center the underline */
+}
+
+.nav-links .mobile-item {
+    display: none;
+}
+
+.wrapper .btn {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.wrapper .btn.close-btn {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+.search-box__wrapper {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Khoảng trống bên phải */
+    margin-top: 55px; /* Increased margin to lower the search box */
+}
+
+.search-box {
+    font-size: 14px;
+    width: 200px;
+    padding: 5px;
+    border: none; /* Loại bỏ đường viền */
+    outline: none; /* Loại bỏ viền khi được chọn */
+    background: none; /* Loại bỏ màu nền */
+    color:  #fff; /* Màu chữ */
+    transition: border-bottom 0.3s; /* Thêm hiệu ứng chuyển tiếp */
+}
+
+
+.search-box__wrapper i{
+    cursor: pointer;
+    color:  #fff;
+    margin-left: 5px; /* Thêm khoảng cách giữa ô tìm kiếm và biểu tượng */
+}
+
+
+/* Icon styling */
+.icon {
+    display: flex;
+    align-items: center;
+}
+
+.icon i {
+    margin-left: 15px; /* Tăng khoảng cách từ biểu tượng người dùng */
+    cursor: pointer;
+    font-size: 20px;
+    color: #fff;
+}
+#cart-count {
+    background-color: transparent; /* Không có màu nền */
+    color: white; /* Màu chữ trắng */
+    font-size: 12px; /* Kích thước chữ nhỏ hơn */
+    font-weight: bold; /* Đậm chữ */
+    position: absolute; /* Để có thể căn chỉnh chính xác */
+    top: 6px; /* Điều chỉnh vị trí theo chiều dọc thấp hơn */
+    right: -5px; /* Điều chỉnh vị trí theo chiều ngang */
+    min-width: 15px; /* Đảm bảo chữ số không bị nhỏ hơn */
+    text-align: center; /* Căn giữa chữ */
+    display: flex; /* Sử dụng flexbox để căn giữa */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    padding: 2px; /* Khoảng cách bên trong */
+    border-radius: 50%; /* Tạo hình tròn */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Thêm bóng đổ nếu cần */
+}
+/* Thêm khoảng cách cho biểu tượng giỏ hàng */
+.icon .fa-cart-shopping {
+    margin-left: 20px; /* Khoảng cách giữa icon người dùng và giỏ hàng */
+}
+.user-menu {
+    display: none; /* Ẩn menu mặc định */
+    position: absolute; /* Vị trí tuyệt đối */
+    background: #354B59; /* Màu nền của menu trùng với màu nền của nav */
+    border-radius: 5px; /* Bo góc cho menu */
+    padding: 10px; /* Khoảng cách bên trong */
+    top: 60px; /* Điều chỉnh để hạ menu xuống dưới biểu tượng */
+    right: 0; /* Căn phải menu */
+    z-index: 100; /* Đảm bảo menu nằm trên các phần tử khác */
+}
+
+.user-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+/* Hiển thị menu khi biểu tượng người dùng được click */
+.icon:hover .user-menu {
+    display: block; /* Hiển thị menu khi hover */
+}
+
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 970px) {
+    .wrapper .btn {
+        display: block;
+    }
+
+    .wrapper .nav-links {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        max-width: 350px;
+        top: 0;
+        left: -100%;
+        background: #242526;
+        display: block;
+        padding: 50px 10px;
+        line-height: 50px;
+        overflow-y: auto;
+        box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.18);
+        transition: all 0.3s ease;
+    }
+
+    /* Custom scroll bar */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #242526;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #3A3B3C;
+    }
+
+    #menu-btn:checked ~ .nav-links {
+        left: 0;
+    }
+
+    #menu-btn:checked ~ .btn.menu-btn {
+        display: none;
+    }
+
+    #close-btn:checked ~ .btn.menu-btn {
+        display: block;
+    }
+
+    .nav-links li {
+        margin: 15px 10px;
+    }
+
+    .nav-links li a {
+        padding: 0 20px;
+        display: block;
+        font-size: 20px;
+    }
+
+    .nav-links .desktop-item {
+        display: none;
+    }
+
+    .nav-links .mobile-item {
+        display: block;
+        color: #f2f2f2;
+        font-size: 20px;
+        font-weight: 500;
+        padding-left: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links .mobile-item:hover {
+        background: #3A3B3C;
+    }
+}

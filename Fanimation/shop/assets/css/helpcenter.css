@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+/* ------------- */
+/* GLOBAL STYLES */
+/* ------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../../images/istockphoto-1254224260-1024x1024.jpg);
+    color: #000000;
+    line-height: 1.6;
+    font-family: 'Yantramanav', sans-serif;
+    padding: 1em;
+}
+
+.container {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.brand {
+    text-align: center;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.brand span {
+    color: #354B59;
+}
+
+.wrapper {
+    box-shadow: 0 0 20px 0 rgba(16, 63, 47, 0.7);
+}
+
+.wrapper > * {
+    padding: 1em;
+}
+
+/* ------------------- */
+
+.company-info {
+    background: #354B59;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.company-info h3,
+.company-info ul {
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+/* ------- */
+/* CONTACT */
+/* ------- */
+
+.contact {
+    background: #ffffff;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/* ---- */
+/* FORM */
+/* ---- */
+
+.contact form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.contact form label {
+    display: block;
+}
+
+.contact form p {
+    margin: 0;
+}
+
+.contact form .full {
+    grid-column: 1 / 3;
+}
+
+.contact form button,
+.contact form input,
+.contact form textarea {
+    width: 100%;
+    padding: 1em;
+    border: solid 1px #354B59;
+    border-radius: 4px;
+}
+
+.contact form textarea {
+    resize: none;
+}
+
+.contact form button {
+    background: #354B59;
+    border: 0;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.contact form button:hover,
+.contact form button:focus {
+    background: #202942;
+    color: #ebe1e1;
+    outline: 0;
+    transition: background-color 2s ease-out;
+}
+
+/* ------------- */
+/* MEDIA QUERIES */
+/* ------------- */
+
+@media only screen and (min-width: 700px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .wrapper > * {
+        padding: 2em;
+    }
+
+    .company-info {
+        border-radius: 4px 0 0 4px;
+    }
+
+    .contact {
+        border-radius: 0 4px 4px 0;
+    }
+
+    .company-info h3,
+    .company-info ul,
+    .brand {
+        text-align: left;
+    }
+}
